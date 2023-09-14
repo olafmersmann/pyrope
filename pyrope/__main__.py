@@ -72,7 +72,7 @@ if args.subcommand == 'run':
         with open(file, 'w') as f:
             nbformat.write(nb, f)
 
-        jupyter_server = subprocess.Popen(['jupyter', 'notebook', file])
+        jupyter_server = subprocess.Popen([sys.executable, "-m", "jupyter", "notebook", file])
         try:
             jupyter_server.wait()
         except KeyboardInterrupt:
